@@ -1,0 +1,13 @@
+#timeline {
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+}
+
+#timeline svg {
+    background-color: purple; 
+}
+
+svg text {
+    fill: white;
+}
