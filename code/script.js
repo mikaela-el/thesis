@@ -192,7 +192,7 @@ let svg = d3.select("#map").style("visibility", "visible").append("svg")
 		.enter()
         .append("path")
         .attr("d", d3.geoPath().projection(scale(10)))
-        .attr("stroke", "black")
+        .attr("stroke", "grey")
         .attr("stroke-width", .3)
         .attr("fill", (d) => {
             if (stateData[d.properties.NAME]) {
@@ -200,7 +200,7 @@ let svg = d3.select("#map").style("visibility", "visible").append("svg")
                 if (stateData[d.properties.NAME][field]) {
                     return "red"
                 } else {
-                    return "white"
+                    return "#F8F0EA"
                 }
             
             }
