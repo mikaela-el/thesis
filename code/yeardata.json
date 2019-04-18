@@ -1,0 +1,350 @@
+[
+  {
+    "year": 1960,
+    "femalePopulation": "91,167,688",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1961,
+    "femalePopulation": "92,724,776",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1962,
+    "femalePopulation": "94,190,774",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1963,
+    "femalePopulation": "95,586,520",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1964,
+    "femalePopulation": "96,963,098",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1965,
+    "femalePopulation": "98,236,551",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1966,
+    "femalePopulation": "99,448,848",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1967,
+    "femalePopulation": "100,623,425",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1968,
+    "femalePopulation": "101,724,070",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1969,
+    "femalePopulation": "102,805,810",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1970,
+    "femalePopulation": "104,076,122",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1971,
+    "femalePopulation": "105,443,973",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1972,
+    "femalePopulation": "106,604,253",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1973,
+    "femalePopulation": "107,643,874",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1974,
+    "femalePopulation": "108,655,509",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1975,
+    "femalePopulation": "109,771,934",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1976,
+    "femalePopulation": "110,880,498",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1977,
+    "femalePopulation": "112,077,291",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1978,
+    "femalePopulation": "113,350,788",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1979,
+    "femalePopulation": "114,675,212",
+    "femaleJustice": 0,
+    "maleJustice": 9
+  },
+  {
+    "year": 1980,
+    "femalePopulation": "115,822,943",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 1981,
+    "femalePopulation": "116,977,168",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 1982,
+    "femalePopulation": "118,084,774",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 1983,
+    "femalePopulation": "119,144,238",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 1984,
+    "femalePopulation": "120,160,657",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 1985,
+    "femalePopulation": "121,228,156",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 1986,
+    "femalePopulation": "122,374,325",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 1987,
+    "femalePopulation": "123,510,043",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 1988,
+    "femalePopulation": "124,677,136",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 1989,
+    "femalePopulation": "125,885,861",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 1990,
+    "femalePopulation": "127,314,146",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 1991,
+    "femalePopulation": "128,993,474",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 1992,
+    "femalePopulation": "130,735,361",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 1993,
+    "femalePopulation": "132,392,823",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 1994,
+    "femalePopulation": "133,942,111",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 1995,
+    "femalePopulation": "135,465,255",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 1996,
+    "femalePopulation": "136,974,478",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 1997,
+    "femalePopulation": "138,561,200",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 1998,
+    "femalePopulation": "140,117,226",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 1999,
+    "femalePopulation": "141,669,463",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 2000,
+    "femalePopulation": "143,190,463",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 2001,
+    "femalePopulation": "144,552,310",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 2002,
+    "femalePopulation": "145,840,225",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 2003,
+    "femalePopulation": "147,043,924",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 2004,
+    "femalePopulation": "148,361,957",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 2005,
+    "femalePopulation": "149,693,614",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 2006,
+    "femalePopulation": "151,110,004",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 2007,
+    "femalePopulation": "152,526,919",
+    "femaleJustice": 1,
+    "maleJustice": 8
+  },
+  {
+    "year": 2008,
+    "femalePopulation": "153,952,230",
+    "femaleJustice": 2,
+    "maleJustice": 7
+  },
+  {
+    "year": 2009,
+    "femalePopulation": "155,280,807",
+    "femaleJustice": 3,
+    "maleJustice": 6
+  },
+  {
+    "year": 2010,
+    "femalePopulation": "156,546,478",
+    "femaleJustice": 3,
+    "maleJustice": 6
+  },
+  {
+    "year": 2011,
+    "femalePopulation": "157,671,524",
+    "femaleJustice": 3,
+    "maleJustice": 6
+  },
+  {
+    "year": 2012,
+    "femalePopulation": "158,811,269",
+    "femaleJustice": 3,
+    "maleJustice": 6
+  },
+  {
+    "year": 2013,
+    "femalePopulation": "159,892,295",
+    "femaleJustice": 3,
+    "maleJustice": 6
+  },
+  {
+    "year": 2014,
+    "femalePopulation": "161,047,769",
+    "femaleJustice": 3,
+    "maleJustice": 6
+  },
+  {
+    "year": 2015,
+    "femalePopulation": "162,221,534",
+    "femaleJustice": 3,
+    "maleJustice": 6
+  },
+  {
+    "year": 2016,
+    "femalePopulation": "163,373,743",
+    "femaleJustice": 3,
+    "maleJustice": 6
+  },
+  {
+    "year": 2017,
+    "femalePopulation": "164,502,605",
+    "femaleJustice": 3,
+    "maleJustice": 6
+  }
+]
