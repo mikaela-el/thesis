@@ -17,7 +17,6 @@ let breakpoints = [];
             .domain([0,9])
             .range([0, window.innerWidth])
             console.log(justiceLineScale(9))
-    
 
 
 // this function should look through the current position and find the ID of the case whose Yposition is closest but less than the current scroll position
@@ -72,6 +71,7 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
         console.log(caseList)
     })
     
+    
    
     // this is creating an div for timeline 
     let timeline  = d3.select('#timeline')
@@ -80,8 +80,18 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
         .attr('position', 'relative')
         .attr('width', 1000)
         .attr('height', caseList.length*150) // 150 becasue of font size
-        
     
+    // // fetching the cases using their ID and then finding all the "a" tags and joining them to the map 
+    //     fetch('cases/' + oneCase.ID + ".html")
+    //         .then(res=>res.text())
+    //         .then(response=>{
+    //             console.log(response);
+    
+    
+    d3.select("#closeSingleCase").on("click", () => {
+    d3.select("#singleCase").style("visibility", "hidden")
+    })
+        
     // creating groups for each case and putting into timeline div 
     let cases = timeline.selectAll('div.case')
            .data(caseList) // this is taking data from caseList 
@@ -100,7 +110,21 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
             .each(function (d, i) {
               
                positionMap[this.getBoundingClientRect().top] = d.ID //finding the posiiton by the ID of the case 
+               console.log(d.ID)
+            //   if (d.ID === 50657) {
+                    buildWordCloud(d.ID, this)
+               
            })
+           
+           .on("mouseover", function (d) {
+                    console.log("case is", d3.select(this))
+                    d3.select (this).select ("svg g").attr("visibility", "visible")
+                })
+            
+            .on("mouseout", function (d) {
+                    console.log("case is", d3.select(this))
+                    d3.select (this).select ("svg g").attr("visibility", "hidden")
+                })
            console.log(positionMap)
           
         breakpoints = Object.keys(positionMap).map(k => +k)
@@ -215,6 +239,7 @@ let svg = d3.select("#map").style("visibility", "visible").append("svg")
             // d3.select(this).attr("fill", "red");
             d3.select("#hover")
                 .text(d.properties.NAME)
+                .style("font-family", "Courier New")
                 //.text(d.properties.subregion.toUpperCase() + ' (Region:' + d.properties.subregion.toUpperCase() + ' (Population: ' + (d.properties.pop_est/1000000).toFixed(1) + 'Mio.)');
             d3.select('#hover').attr("fill-opacity", 1);
         })
