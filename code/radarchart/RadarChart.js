@@ -1,5 +1,5 @@
 // (function () {
-       console.log("hi")
+    //   console.log("hi")
     
     var width = 300,
         height = 300;
@@ -17,12 +17,12 @@
             //Call function to draw the Radar chart
         d3.json(`keyWords/${caseID}.json`)
             .then(data => {
-             console.log("data is", data)
+            //  console.log("data is", data)
             RadarChart.draw("#chart", data, config);
         })
         
         .catch(error => {
-            console.log("error is", error)
+            // console.log("error is", error)
          
         })
         
@@ -34,9 +34,9 @@
         	
         var RadarChart = {
           draw: function(id, d, options){
-              console.log("drawing")
+            //   console.log("drawing")
             var cfg = {
-             radius: 5,
+             radius: 10,
              w: 700,
              h: 400,
              factor: 1,
@@ -46,8 +46,8 @@
              radians: 2 * Math.PI,
              opacityArea: 0.5,
              ToRight: 5,
-             TranslateX: 80,
-             TranslateY: 30,
+             TranslateX: 30,
+             TranslateY: 60,
              ExtraWidthX: 0,
              ExtraWidthY: 0,
              color: d3.scaleOrdinal().range(["#6F257F", "#CA0D59"])
@@ -67,29 +67,30 @@
             
             const fontScale = d3.scaleLinear()
                 .domain([Math.min(...allAxis.map(d => d.count)), Math.max(...allAxis.map(d => d.count))])
-                .range([12, 40])
+                .range([15, 25])
             
             
             var total = allAxis.length;
             var radius = cfg.factor*Math.min(cfg.w/2, cfg.h/2);
             var Format = d3.format('%');
             d3.select(id).select("svg").remove();
-            console.log("thisCase", thisCase)
+            // console.log("thisCase", thisCase)
             var g = d3.select(thisCase)
             
                 .append("svg")
                 .attr("class", "keywordSVG")
-                .attr("transform", "translate(" + -25 + "," + -150 + ")")
-                .attr("width", cfg.w+cfg.ExtraWidthX)
+                .attr("transform", "translate(" + -100 + "," + -150 + ")")
+                .attr("width", cfg.w+cfg.ExtraWidthX + 200)
                 .attr("height", cfg.h+cfg.ExtraWidthY)
                 .append("g")
                 .attr("class", "keywordGROUP")
                 .attr("transform", "translate(" + cfg.TranslateX + "," + cfg.TranslateY + ")")
-                .attr("visibility", "hidden");
+                // .attr("visibility", "hidden");
+                .attr("opacity", 0);
         
             series = 0;
-            console.log('ALL AXIS', allAxis)
-            console.log('g', g)
+            // console.log('ALL AXIS', allAxis)
+            // console.log('g', g)
             var axis = g.selectAll(".axis")
                 .data(allAxis)
                 .enter()
@@ -101,7 +102,7 @@
               .text(function(d){return d.word})
             //   .style("font-family", "sans-serif")
               .style("font-size", d => {
-                  console.log(d.count, fontScale(d.count))
+                //   console.log(d.count, fontScale(d.count))
                   return `${fontScale(d.count)}px`
               }) 
               .attr("text-anchor", "middle")

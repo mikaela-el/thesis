@@ -20,7 +20,7 @@ const newFiles = fileName => {
       if (err) throw err
       
     // add additional filters words here 
-    const filterWords = ["court", "abortions", "br", "href", "justice", "class", "abortion", "judge", "p", "statute", "text", "state", "states", "st", "parts", "pp", "title", "n", "law", "currentColor"]
+    const filterWords = ["court", "abortions", "br", "href", "justice", "class", "abortion", "judge", "p", "statute", "text", "state", "states", "st", "parts", "pp", "title", "n", "law", "currentColor", "bubble", "XIX", "Weddington", "Potter", "Stewart", "opponent", "MR", "Powell", "two", "both", "Second", "First", "cases", "Douglas", "City", "anyone", "X", "gain"]
       let myKeywords = file.data.keywords.map(k => ({ count: k.matches.length, word: k.matches[0].node.children[0].value }))
       
       myKeywords = myKeywords.filter(k => {

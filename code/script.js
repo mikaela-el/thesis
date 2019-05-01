@@ -4,7 +4,7 @@ d3.json("yeardata.json")
     .then(data => {
     yearData = data
     })
-
+    
 console.log(yearData)
 
 const spacing = 150;
@@ -18,6 +18,9 @@ let breakpoints = [];
             .range([0, window.innerWidth])
             console.log(justiceLineScale(9))
 
+//  d3.select("#enterSite").on("click", () => {
+//     d3.select("#landingPage").style("visibility", "hidden")
+//     })
 
 // this function should look through the current position and find the ID of the case whose Yposition is closest but less than the current scroll position
 const findCurrentCase = (scrollPosition) => {
@@ -47,11 +50,22 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
         };
     });
     
+    function sortByKey(array, key) {
+        return array.sort(function(a, b) {
+            var fElem = a[key]; var sElem = b[key];
+            return ((fElem < sElem) ? -1 : ((fElem > sElem) ? 1 : 0));
+        });
+    }
+    
+    sortByKey(cases, "term");
+    
     return cases;
 })
 
 // this is for the justice line and scrolling 
 .then(caseList=>{
+    let numJustices = 0 ;
+    let womenPop;
     // console.log(JSON.stringify(caseList))
     window.addEventListener('scroll', function() { 
         // this is finding the place of the divs and then matching with the index and id 
@@ -61,16 +75,26 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
         // console.log(currentCase)
         const currentYear = yearData.find(d => d.year===+currentCase.term)
         // console.log(currentYear)
-        const numJustices = currentYear.femaleJustice
-        console.log(numJustices)
+        womenPop = currentYear.femalePopulation
+        numJustices = currentYear.femaleJustice
+        console.log(womenPop)
             d3.select("#justiceLine")
             // .style("left", `${justiceLineScale(0)}px`)
             .transition()
             .duration(1000)
             .style("left", `${justiceLineScale(numJustices)}px`)
+            .text( numJustices + " Women on Supreme Court")
+            d3.select("#femalePopulation")
+                // .enter() // DATA JOINS 
+                // .append('text')
+                .html("Women in the United States:" + womenPop)
         console.log(caseList)
     })
     
+    // d3.select(justiceLine)
+    //     .append("text")
+    //     .text( numJustices + "Women on Supreme Court")
+    //     .attr("font-size", "'Libre Baskerville', serif")
     
    
     // this is creating an div for timeline 
@@ -78,19 +102,17 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
         .append('div')
         .attr("id", "caseList")
         .attr('position', 'relative')
-        .attr('width', 1000)
+        .attr('width', 1200)
         .attr('height', caseList.length*150) // 150 becasue of font size
-    
-    // // fetching the cases using their ID and then finding all the "a" tags and joining them to the map 
-    //     fetch('cases/' + oneCase.ID + ".html")
-    //         .then(res=>res.text())
-    //         .then(response=>{
-    //             console.log(response);
     
     
     d3.select("#closeSingleCase").on("click", () => {
-    d3.select("#singleCase").style("visibility", "hidden")
-    })
+        let caseName = d3.select('#caseName')
+        caseName.selectAll("text").remove()
+        d3.select("body")
+        .classed("case", false);
+        // d3.select("#singleCase").style("visibility", "hidden")
+    }) // DATA JOIN 
         
     // creating groups for each case and putting into timeline div 
     let cases = timeline.selectAll('div.case')
@@ -110,7 +132,7 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
             .each(function (d, i) {
               
                positionMap[this.getBoundingClientRect().top] = d.ID //finding the posiiton by the ID of the case 
-               console.log(d.ID)
+            //   console.log(d.ID)
             //   if (d.ID === 50657) {
                     buildWordCloud(d.ID, this)
                
@@ -118,12 +140,18 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
            
            .on("mouseover", function (d) {
                     console.log("case is", d3.select(this))
-                    d3.select (this).select ("svg g").attr("visibility", "visible")
+                    d3.select (this)
+                    .select ("svg g")
+                    // .attr("visibility", "visible")
+                    .attr("opacity", 1)
                 })
             
             .on("mouseout", function (d) {
                     console.log("case is", d3.select(this))
-                    d3.select (this).select ("svg g").attr("visibility", "hidden")
+                    d3.select (this)
+                    .select ("svg g")
+                    // .attr("visibility", "hidden")
+                    .attr("opacity", 0)
                 })
            console.log(positionMap)
           
@@ -153,6 +181,7 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
         
         let caseName = d3.select('#caseName')
         
+        // caseName.selectAll("text").remove()
          // printing the ID of the case at the top of the page 
         caseName.append('text')
         .attr('class', 'ID')
@@ -189,24 +218,49 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
 let stateData;
 d3.json('abortionAPI/stateData.json').then((json) => { stateData = json });
 
+let fieldDescription;
+d3.json('fielddescription.json').then((json) => { fieldDescription = json });
 
+ 
 const showMap = (field) => {
     
-    console.log(stateData);
-    
+    // console.log(stateData);
     d3.json('mapping/d3GeoJSON/states.geo.json').then((geojson) => {
             
-console.log(geojson);
-
-let svg = d3.select("#map").style("visibility", "visible").append("svg")
+// console.log(geojson);
+d3.select("#mapContainer svg").remove();
+d3.select("#map")
+            .style("visibility", "visible")
+let svg = d3.select("#mapContainer")
+            .style("visibility", "visible")
+            .append("svg")
 
 // let boxSize = d3.select("#map").node().getBoundingClientRect();
 // console.log(boxSize)
+
+    
+    console.log(field, fieldDescription);
+    
+    let currentFieldDescription = fieldDescription.filter(item => {
+        if(field == item.field) {
+            return true
+        } else {
+            return false;
+        }
+    });
+    
+    currentFieldDescription = currentFieldDescription[0];
+    
+    d3.select("#fieldDescription")
+        .html(currentFieldDescription.title + "-" + currentFieldDescription.description)
+    
     
     scale =  (scaleFactor) => {
         return d3.geoTransform({
             point: function(x, y) {
-                this.stream.point(x * scaleFactor + window.innerWidth*1.3, -1 * y * scaleFactor + window.innerHeight*.9);
+                // this.stream.point(x * scaleFactor, -1 * y * scaleFactor);
+                this.stream.point(x * scaleFactor + window.innerWidth*1.45, -1 * y * scaleFactor + window.innerHeight*1.2);
+
             }
         });
     }
@@ -220,9 +274,14 @@ let svg = d3.select("#map").style("visibility", "visible").append("svg")
         .attr("stroke-width", .3)
         .attr("fill", (d) => {
             if (stateData[d.properties.NAME]) {
-                console.log("state name", (stateData[d.properties.NAME][field]))
+                // console.log("state name", (stateData[d.properties.NAME][field]))
                 if (stateData[d.properties.NAME][field]) {
-                    return "red"
+                    
+                    if(stateData[d.properties.NAME][field] == 99) {
+                        return "pink"
+                    } else {
+                        return "red"
+                    }
                 } else {
                     return "#F8F0EA"
                 }
@@ -233,14 +292,13 @@ let svg = d3.select("#map").style("visibility", "visible").append("svg")
             // console.log(d.properties.NAME);
             // return "white"
         }) 
-        .attr("fill-opacity", 0.5)
+        .attr("fill-opacity", 0.6)
         .on('mouseover', function(d) {
             console.log(d);
             // d3.select(this).attr("fill", "red");
             d3.select("#hover")
                 .text(d.properties.NAME)
                 .style("font-family", "Courier New")
-                //.text(d.properties.subregion.toUpperCase() + ' (Region:' + d.properties.subregion.toUpperCase() + ' (Population: ' + (d.properties.pop_est/1000000).toFixed(1) + 'Mio.)');
             d3.select('#hover').attr("fill-opacity", 1);
         })
         .on('mouseout', function() {
@@ -261,6 +319,7 @@ let svg = d3.select("#map").style("visibility", "visible").append("svg")
 
 d3.select("#closeMap").on("click", () => {
     d3.select("#map").style("visibility", "hidden")
+    d3.select("#mapContainer").style("visibility", "hidden")
 })
 
 // __________________UNDERLINE LINKS___________________// 

@@ -65,8 +65,7 @@
     "private_coverage_no_restrictions": true,
     "waiting_period_hours": 24,
     "counseling_visits": 2,
-    "counseling_waived_condition": "The ultrasound must take place at least 24 hours before the abortion unless the patient lives more than 100 miles from an abortion provider or if the pregnancy is the result of rape or incest.",
-    "clinic_protection": true
+    "counseling_waived_condition": "The ultrasound must take place at least 24 hours before the abortion unless the patient lives more than 100 miles from an abortion provider or if the pregnancy is the result of rape or incest."
   },
   "Massachusetts": {
     "banned_after_weeks_since_LMP": 24,
@@ -79,11 +78,7 @@
     "judicial_bypass_available": true,
     "private_coverage_no_restrictions": true,
     "exchange_coverage_no_restrictions": true,
-    "medicaid_coverage_provider_patient_decision": true,
-    "clinic_protection": true,
-    "clinic_obstruction": true,
-    "clinic_threat": true,
-    "clinic_bubble_zone": true
+    "medicaid_coverage_provider_patient_decision": true
   },
   "Washington": {
     "banned_after_weeks_since_LMP": 99,
@@ -93,12 +88,7 @@
     "exchange_coverage_no_restrictions": true,
     "medicaid_coverage_provider_patient_decision": true,
     "requires_coverage": true,
-    "Last Updated": "2019-01-02T00:00:00.000Z",
-    "clinic_protection": true,
-    "clinic_obstruction": true,
-    "clinic_threat": true,
-    "clinic_telephonen": true,
-    "clinic_other": true
+    "Last Updated": "2019-01-02T00:00:00.000Z"
   },
   "Michigan": {
     "banned_after_weeks_since_LMP": 99,
@@ -112,9 +102,7 @@
     "medicaid_exception_life": true,
     "medicaid_exception_rape_or_incest": true,
     "waiting_period_hours": 24,
-    "counseling_visits": 1,
-    "clinic_protection": true,
-    "clinic_threat": true
+    "counseling_visits": 1
   },
   "Delaware": {
     "banned_after_weeks_since_LMP": 99,
@@ -153,9 +141,7 @@
     "private_coverage_no_restrictions": true,
     "exchange_coverage_no_restrictions": true,
     "medicaid_coverage_provider_patient_decision": true,
-    "Last Updated": "2018-06-23T00:00:00.000Z",
-    "clinic_protection": true,
-    "clinic_obstruction": true
+    "Last Updated": "2018-06-23T00:00:00.000Z"
   },
   "Iowa": {
     "banned_after_weeks_since_LMP": 22,
@@ -211,12 +197,7 @@
     "private_coverage_no_restrictions": true,
     "exchange_coverage_no_restrictions": true,
     "medicaid_coverage_provider_patient_decision": true,
-    "requires_coverage": true,
-    "clinic_protection": true,
-    "clinic_obstruction": true,
-    "clinic_threat": true,
-    "clinic_damage": true,
-    "clinic_other": true
+    "requires_coverage": true
   },
   "North Dakota": {
     "banned_after_weeks_since_LMP": 22,
@@ -247,9 +228,7 @@
     "medicaid_exception_life": true,
     "medicaid_exception_rape_or_incest": true,
     "waiting_period_hours": 24,
-    "counseling_visits": 1,
-    "clinic_protection": true,
-    "clinic_obstruction": true
+    "counseling_visits": 1
   },
   "Georgia": {
     "banned_after_weeks_since_LMP": 22,
@@ -291,10 +270,7 @@
     "Last Updated": "2018-06-23T00:00:00.000Z",
     "private_coverage_no_restrictions": true,
     "exchange_coverage_no_restrictions": true,
-    "medicaid_coverage_provider_patient_decision": true,
-    "clinic_protection": true,
-    "clinic_obstruction": true,
-    "clinic_bubble_zone": true
+    "medicaid_coverage_provider_patient_decision": true
   },
   "South Carolina": {
     "banned_after_weeks_since_LMP": 22,
@@ -343,9 +319,7 @@
     "Last Updated": "2018-11-05T00:00:00.000Z",
     "waiting_period_hours": 24,
     "counseling_visits": 1,
-    "counseling_waived_condition": "Counseling/waiting period waived in cases of lethal fetal anomaly.",
-    "clinic_protection": true,
-    "clinic_obstruction": true
+    "counseling_waived_condition": "Counseling/waiting period waived in cases of lethal fetal anomaly."
   },
   "Hawaii": {
     "banned_after_weeks_since_LMP": 99,
@@ -366,9 +340,7 @@
     "medicaid_exception_life": true,
     "medicaid_exception_rape_or_incest": true,
     "private_coverage_no_restrictions": true,
-    "exchange_coverage_no_restrictions": true,
-    "clinic_protection": true,
-    "clinic_obstruction": true
+    "exchange_coverage_no_restrictions": true
   },
   "Indiana": {
     "banned_after_weeks_since_LMP": 22,
@@ -425,11 +397,7 @@
     "private_coverage_no_restrictions": true,
     "exchange_coverage_no_restrictions": true,
     "medicaid_coverage_provider_patient_decision": true,
-    "requires_coverage": true,
-    "clinic_protection": true,
-    "clinic_obstruction": true,
-    "clinic_threat": true,
-    "clinic_damage": true
+    "requires_coverage": true
   },
   "Arkansas": {
     "banned_after_weeks_since_LMP": 22,
@@ -573,9 +541,7 @@
     "medicaid_exception_rape_or_incest": true,
     "private_coverage_no_restrictions": true,
     "waiting_period_hours": 24,
-    "counseling_visits": 2,
-    "clinic_protection": true,
-    "clinic_other": true
+    "counseling_visits": 2
   },
   "Texas": {
     "banned_after_weeks_since_LMP": 22,
@@ -619,11 +585,7 @@
     "medicaid_exception_life": true,
     "medicaid_exception_rape_or_incest": true,
     "private_coverage_no_restrictions": true,
-    "exchange_coverage_no_restrictions": true,
-    "clinic_protection": true,
-    "clinic_obstruction": true,
-    "clinic_telephone": true,
-    "clinic_other": true
+    "exchange_coverage_no_restrictions": true
   },
   "North Carolina": {
     "banned_after_weeks_since_LMP": 20,
@@ -639,11 +601,7 @@
     "medicaid_exception_rape_or_incest": true,
     "private_coverage_no_restrictions": true,
     "waiting_period_hours": 72,
-    "counseling_visits": 1,
-    "clinic_protection": true,
-    "clinic_obstruction": true,
-    "clinic_threat": true,
-    "clinic_other": true
+    "counseling_visits": 1
   },
   "Alabama": {
     "banned_after_weeks_since_LMP": 22,
@@ -703,12 +661,7 @@
     "medicaid_exception_life": true,
     "medicaid_exception_rape_or_incest": true,
     "private_coverage_no_restrictions": true,
-    "exchange_coverage_no_restrictions": true,
-    "clinic_protection": true,
-    "clinic_obstruction": true,
-    "clinic_threat": true,
-    "clinic_telephone": true,
-    "clinic_other": true
+    "exchange_coverage_no_restrictions": true
   },
   "Alaska": {
     "allows_minor_to_consent_to_abortion": true,
@@ -725,8 +678,7 @@
     "medicaid_exception_life": true,
     "medicaid_exception_rape_or_incest": true,
     "private_coverage_no_restrictions": true,
-    "exchange_coverage_no_restrictions": true,
-    "clinic_protection": true
+    "exchange_coverage_no_restrictions": true
   },
   "Oregon": {
     "allows_minor_to_consent_to_abortion": true,
@@ -734,10 +686,7 @@
     "exchange_coverage_no_restrictions": true,
     "medicaid_coverage_provider_patient_decision": true,
     "requires_coverage": true,
-    "Last Updated": "2019-01-02T00:00:00.000Z",
-    "clinic_protection": true,
-    "clinic_obstruction": true,
-    "clinic_damage": true
+    "Last Updated": "2019-01-02T00:00:00.000Z"
   },
   "New Jersey": {
     "allows_minor_to_consent_to_abortion": true,
@@ -754,10 +703,7 @@
     "medicaid_exception_life": true,
     "medicaid_exception_rape_or_incest": true,
     "private_coverage_no_restrictions": true,
-    "exchange_coverage_no_restrictions": true,
-    "clinic_protection": true,
-    "clinic_bubble_zone": true
-    
+    "exchange_coverage_no_restrictions": true
   },
   "Vermont": {
     "allows_minor_to_consent_to_abortion": true,

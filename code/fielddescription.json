@@ -1,0 +1,127 @@
+[
+  {
+    "field": "clinic_protection",
+    "title": "Clinic Protection",
+    "description": "States that provide protections related to a facility or healthcare provider that provides abortion services."
+  },
+  {
+    "field": "clinic_obstruction",
+    "title": "Clinic Obstruction",
+    "description": "States that prohibit blocking the entrance to and from clinic facilities."
+  },
+  {
+    "field": "clinic_threat",
+    "title": "Clinic Threats",
+    "description": "States that prohibit threatening or intimidating staff who provide reproductive health services and/or patients entering the clinic."
+  },
+  {
+    "field": "clinic_damage",
+    "title": "Clinic Damage",
+    "description": "States that prohibit property damage to facilities providing reproductive health services."
+  },
+  {
+    "field": "clinic_telephone",
+    "title": "Clinic Telephone Harrasment",
+    "description": "States that prohibit telephone harassment of staff who provide reproductive health services."
+  },
+  {
+    "field": "clinic_other",
+    "title": "Clinic General Harassment",
+    "description": "States that prohibit other specified actions, such as creating excessive noise outside the clinic, possessing or having access to a weapon during a demonstration at a medical facility, trespassing, or releasing a substance that produces noxious odor on clinic premises."
+  },
+  {
+    "field": "clinic_bubble_zone",
+    "title": "Clinic Buffer Zone",
+    "description": "Sates that have established a buffer zone around a person within a specific distance of a clinic's entrance or driveway."
+  },
+  {
+    "field": "banned_after_weeks_since_LMP",
+    "title": "Bans After Cetrain Number of Weeks",
+    "description": "State gestational bans represented as weeks since last missed period. Restrictions vary depending on trimester, viability and fertilization."
+  },
+  {
+    "field": "exception_life",
+    "title": "Exception to Save a Pregnant Person's Life",
+    "description": "States that abortion is not banned if necessary to save the pregnant person's life."
+  },
+  {
+    "field": "exception_health",
+    "title": "Exception to Preserve a Pregnant Person's Health",
+    "description": "States that abortion is not banned if necessary to preserve the pregnant person's health."
+  },
+  {
+    "field": "exception_fetal",
+    "title": "Exception to Preserve the Health of a Fetus",
+    "description": "States where exceptions may be granted based on the health or status of the fetus."
+  },
+  {
+    "field": "exception_rape_or_incest",
+    "title": "Exception in the case of Rape or Incest",
+    "description": "States where exceptions may be granted in cases of rape or incest."
+  },
+  {
+    "field": "medicaid_coverage_provider_patient_decision",
+    "title": "Medicaid Coverage",
+    "description": "States that have a policy in place to use Medicaid funds to pay for abortion, most of these states require coverage for \"medically necessary\" abortion. This is a vaguely-defined criterion usually based on a decision between a pregnant person and their medical provider and can include circumstances beyond physical health, such as mental or emotional health or familial situations.\nMedicaid is a federal-state insurance program. Based on the Hyde amendment, states are required to use Medicaid funds to pay for abortion in cases of rape, of incest, or when the pregnant person's life is endangered; these are also the only circumstances in which federal Medicaid funds may be used to pay for abortion. Most states limit abortion coverage just to the Hyde amendment, though some states offer additional coverage (for example, when the pregnant person's health is at risk)."
+  },
+  {
+    "field": "medicaid_exception_life",
+    "title": "Medicaid Coverage Exception to Save a Life",
+    "description": "States that allow Medicaid insurance coverage for cases where abortion is necessary to save the pregnant person's life (this is required by the Hyde amendment).\nMedicaid is a federal-state insurance program. Based on the Hyde amendment, states are required to use Medicaid funds to pay for abortion in cases of rape, of incest, or when the pregnant person's life is endangered; these are also the only circumstances in which federal Medicaid funds may be used to pay for abortion. Most states limit abortion coverage just to the Hyde amendment, though some states offer additional coverage (for example, when the pregnant person's health is at risk)."
+  },
+  {
+    "field": "medicaid_exception_health",
+    "title": "Medicaid Coverage Exception to Save a Person's Health",
+    "description": "States that allow Medicaid insurance coverage for cases when the pregnant person's physical health is endangered. Medicaid is a federal-state insurance program. Based on the Hyde amendment, states are required to use Medicaid funds to pay for abortion in cases of rape, of incest, or when the pregnant person's life is endangered; these are also the only circumstances in which federal Medicaid funds may be used to pay for abortion. Most states limit abortion coverage just to the Hyde amendment, though some states offer additional coverage (for example, when the pregnant person's health is at risk)."
+  },
+  {
+    "field": "medicaid_exception_fetal",
+    "title": "Medicaid Exception to Preserve the Health of a Fetus",
+    "description": "States that allow Medicaid insurance coverage for cases when the fetus has a serious or lethal fetal anomaly. Medicaid is a federal-state insurance program. Based on the Hyde amendment, states are required to use Medicaid funds to pay for abortion in cases of rape, of incest, or when the pregnant person's life is endangered; these are also the only circumstances in which federal Medicaid funds may be used to pay for abortion. Most states limit abortion coverage just to the Hyde amendment, though some states offer additional coverage (for example, when the pregnant person's health is at risk)."
+  },
+  {
+    "field": "medicaid_exception_rape_or_incest",
+    "title": "Medicaid Exception in the case of Rape or Incest",
+    "description": "States that allow Medicaid insurance coverage for cases of rape or incest (this is required by the Hyde amendment). Medicaid is a federal-state insurance program. Based on the Hyde amendment, states are required to use Medicaid funds to pay for abortion in cases of rape, of incest, or when the pregnant person's life is endangered; these are also the only circumstances in which federal Medicaid funds may be used to pay for abortion. Most states limit abortion coverage just to the Hyde amendment, though some states offer additional coverage (for example, when the pregnant person's health is at risk)."
+  },
+  {
+    "field": "below_age",
+    "title": "Age of a Minor",
+    "description": "The age below which restrictions apply. For the most part, these restrictions apply to minors under the age of 18. There are a few exceptions, however."
+  },
+  {
+    "field": "parental_consent_required",
+    "title": "Parental Consent",
+    "description": "States where a parent or parents must give permission for the minor to have an abortion. Some states require both consent and notification through separate laws."
+  },
+  {
+    "field": "parental_notification_required",
+    "title": "Parental Notification",
+    "description": "States where a parent or parents must be told beforehand of the minor's decision to have an abortion.\nSome states require notification 48 hours before, some require notification 24 hours before, and some just require \"before\"."
+  },
+  {
+    "field": "parents_required",
+    "title": "Number of Parents Notified",
+    "description": "States that require either one parent or both parents to be notified. Many, but not all, states have extended the definition of \"parent\" to include other adult guardians. If parents meeting the state's definition cannot be located, a minor would often need to secure a judicial bypass."
+  },
+  {
+    "field": "judicial_bypass_available",
+    "title": "Judicial Bypass",
+    "description": "States where a judge can excuse a minor from the required parental consent and/or notification.\nThis is available in most states with restrictions, and in some you can be excused by a doctor."
+  },
+  {
+    "field": "allows_minor_to_consent",
+    "title": "Minor Consent",
+    "description": "States that either explicitly grant a minor the ability to consent to an abortion (through the law) or implicitly allow a minor to consent (because no law expressly requires parental involvement or because a parental involvement law was struck down in the courts)."
+  },
+  {
+    "field": "waiting_period_hours",
+    "title": "Waiting Period",
+    "description": "States that have a mandatory waiting period. The number of hours someone must wait between receiving state mandated abortion counseling and obtaining an abortion. Note that all states waive mandatory waiting period requirements in a medical emergency or when the woman's life or health is threatened."
+  },
+  {
+    "field": "counseling_visits",
+    "title": "Counseling Visits",
+    "description": "States that have counseling required by the state and/ or ultrasound must be obtained at the facility before the waiting period begins, requiring two trips to the clinic"
+  }
+]
