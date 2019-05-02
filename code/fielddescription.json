@@ -97,17 +97,17 @@
   {
     "field": "parental_notification_required",
     "title": "Parental Notification",
-    "description": "States where a parent or parents must be told beforehand of the minor's decision to have an abortion.\nSome states require notification 48 hours before, some require notification 24 hours before, and some just require \"before\"."
+    "description": "In the U.S., 15 states require that a parent or parents must be told beforehand of the minor's decision to have an abortion. Some states require notification 48 hours before, some require notification 24 hours before, and some just require \"before\"."
   },
   {
     "field": "parents_required",
     "title": "Number of Parents Notified",
-    "description": "States that require either one parent or both parents to be notified. Many, but not all, states have extended the definition of \"parent\" to include other adult guardians. If parents meeting the state's definition cannot be located, a minor would often need to secure a judicial bypass."
+    "description": "States that require either one parent or both parents to be notified. Many, but not all, states have extended the definition of parent to include other adult guardians. If parents meeting the state's definition cannot be located, a minor would often need to secure a judicial bypass."
   },
   {
     "field": "judicial_bypass_available",
     "title": "Judicial Bypass",
-    "description": "States where a judge can excuse a minor from the required parental consent and/or notification.\nThis is available in most states with restrictions, and in some you can be excused by a doctor."
+    "description": "States where a judge can excuse a minor from the required parental consent and/or notification. This is available in most states with restrictions, and in some you can be excused by a doctor."
   },
   {
     "field": "allows_minor_to_consent",

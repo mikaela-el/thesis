@@ -4,14 +4,59 @@ d3.json("yeardata.json")
     .then(data => {
     yearData = data
     })
-    
+
+const yearJusticeCount = {
+    // 150: 0,
+    //7885: 1,
+    7000: 1,
+    // 13358: 2,
+    11000: 2,
+    // 18908: 1,
+    14000: 1,
+    // 19954: 3
+    16000: 3
+}
+
+const yearFemalePop = {
+    10: 104076122,
+    250: 105443973,
+    500: 105443973,
+    750: 105443973,
+    1000: 107643874,
+    1250: 109771934,
+    2300: 109771934,
+    1056: 110880498,
+    1119: 110880498,
+    1308: 110880498,
+    1371: 110880498,
+    1434: 110880498,
+    1497: 113350788,
+    1623: 113350788,
+    1686: 113350788,
+    1749: 114675212,
+    1812: 114675212
+}
+
+var getClosest = function (arr, num) {
+    let closest
+    for (var i = 0; i< arr.length; i++){
+        if (num > arr[i]) {
+            closest = arr[i]
+        }
+    }
+    return closest
+}
+
+
 console.log(yearData)
 
 const spacing = 150;
 
 const positionMap = {};
 
-let breakpoints = [];
+let breakpoints = Object.keys(yearJusticeCount);
+
+let breakpointsPopulation = Object.keys(yearFemalePop);
 
     const justiceLineScale = d3.scaleLinear()
             .domain([0,9])
@@ -65,29 +110,40 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
 // this is for the justice line and scrolling 
 .then(caseList=>{
     let numJustices = 0 ;
-    let womenPop;
+    let womenPop = 0;
     // console.log(JSON.stringify(caseList))
     window.addEventListener('scroll', function() { 
         // this is finding the place of the divs and then matching with the index and id 
-        const insertion = d3.bisectLeft(breakpoints, this.pageYOffset)
-        const caseInView = positionMap[breakpoints[insertion]]
-        const currentCase = caseList.find(d => d.ID===caseInView)
-        // console.log(currentCase)
-        const currentYear = yearData.find(d => d.year===+currentCase.term)
+        console.log(pageYOffset)
+        //const insertion = d3.bisectLeft(breakpoints, this.pageYOffset)
+        
+        const closestBreakpoint = getClosest( breakpoints, this.pageYOffset)
+        
+        console.log('closestBreakpoint', closestBreakpoint)
+        
+        numJustices = yearJusticeCount[closestBreakpoint]
+        //const currentCase = caseList.find(d => d.ID===caseInView)
+        // console.log(insertion)
+     
+        //console.log('We found a case', caseInView)
+        console.log("breakpoints:", breakpoints)
+        //const currentYear = yearData.find(d => d.year===+currentCase.term)
         // console.log(currentYear)
-        womenPop = currentYear.femalePopulation
-        numJustices = currentYear.femaleJustice
-        console.log(womenPop)
+        closestBreakpointPop = getClosest( breakpointsPopulation, this.pageYOffset)
+        womenPop = yearFemalePop[closestBreakpointPop]
+        console.log('womenPop', womenPop)
+        //numJustices = currentYear.femaleJustice
+        // console.log(womenPop)
             d3.select("#justiceLine")
             // .style("left", `${justiceLineScale(0)}px`)
             .transition()
             .duration(1000)
             .style("left", `${justiceLineScale(numJustices)}px`)
-            .text( numJustices + " Women on Supreme Court")
+            .text( (!numJustices ? 0 : numJustices)  + " Women on Supreme Court")
             d3.select("#femalePopulation")
                 // .enter() // DATA JOINS 
                 // .append('text')
-                .html("Women in the United States:" + womenPop)
+                .html("Women in the United States: " + (!womenPop ? 0 : womenPop))
         console.log(caseList)
     })
     
@@ -130,14 +186,17 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
                 showCase(d) 
             })
             .each(function (d, i) {
+              if (i==0 || i==1 || i==2) {
+                  console.log(this.getBoundingClientRect())
+              }
+              const newPosition = (i ==0) ? this.getBoundingClientRect().top : (this.getBoundingClientRect().top + 150)
               
-               positionMap[this.getBoundingClientRect().top] = d.ID //finding the posiiton by the ID of the case 
+               positionMap[newPosition] = d.ID //finding the posiiton by the ID of the case 
             //   console.log(d.ID)
             //   if (d.ID === 50657) {
                     buildWordCloud(d.ID, this)
                
            })
-           
            .on("mouseover", function (d) {
                     console.log("case is", d3.select(this))
                     d3.select (this)
@@ -153,9 +212,9 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
                     // .attr("visibility", "hidden")
                     .attr("opacity", 0)
                 })
-           console.log(positionMap)
+           console.log('positon map:', positionMap)
           
-        breakpoints = Object.keys(positionMap).map(k => +k)
+        //breakpoints = Object.keys(positionMap).map(k => +k)
         
     // titles.append('span')
     //     .text('something')
@@ -252,7 +311,7 @@ let svg = d3.select("#mapContainer")
     currentFieldDescription = currentFieldDescription[0];
     
     d3.select("#fieldDescription")
-        .html(currentFieldDescription.title + "-" + currentFieldDescription.description)
+        .html(currentFieldDescription.description)
     
     
     scale =  (scaleFactor) => {
