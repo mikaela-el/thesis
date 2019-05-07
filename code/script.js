@@ -6,35 +6,59 @@ d3.json("yeardata.json")
     })
 
 const yearJusticeCount = {
-    // 150: 0,
-    //7885: 1,
-    7000: 1,
-    // 13358: 2,
-    11000: 2,
-    // 18908: 1,
-    14000: 1,
-    // 19954: 3
-    16000: 3
+    0: 0,
+    3252: 1,
+    5248: 2,
+    8834: 1,
+    9443: 3
 }
 
 const yearFemalePop = {
-    10: 104076122,
-    250: 105443973,
-    500: 105443973,
-    750: 105443973,
-    1000: 107643874,
-    1250: 109771934,
-    2300: 109771934,
-    1056: 110880498,
-    1119: 110880498,
-    1308: 110880498,
-    1371: 110880498,
-    1434: 110880498,
-    1497: 113350788,
-    1623: 113350788,
-    1686: 113350788,
-    1749: 114675212,
-    1812: 114675212
+    0: 104076122, //1970 
+    50: 105443973, // 1971
+    600: 107643874, //1973
+    800: 109771934, //1975
+    1300: 110880498, //1976
+    2400: 113350788, //1978
+    3000: 114675212, //1979
+    3400: 115822943, //1980
+    3600: 118084774, //1982
+    4400: 121228156, //1985
+    4650: 123510043, //1987
+    4850: 124677136, //1988
+    5200: 125885861, //1989
+    5700: 127314146, //1990
+    5850: 128993474, //1991
+    6150: 132392823, //1993
+    6750: 135465255, //1995
+    6950: 136974478, //1996
+    7650: 141669463, //1999
+    8050: 145840225, //2002
+    8350: 149693614, //2005
+    8900: 151110004, //2006
+    9500: 159892295, //2013
+    9750: 162221534, //2015
+    10000: 164502605, //2017
+}
+
+const justiceImageYear = {
+    1970: "https://api.oyez.org/sites/default/files/images/courts/burger2.jpg",
+    1971: "https://api.oyez.org/sites/default/files/images/courts/burger2.jpg",
+    1972: "https://api.oyez.org/sites/default/files/images/courts/burger2.jpg",
+    1973: "https://api.oyez.org/sites/default/files/images/courts/burger4.jpg",
+    1975: "https://api.oyez.org/sites/default/files/images/courts/burger6.jpg",
+    1982: "https://api.oyez.org/sites/default/files/images/courts/burger8.jpg",
+    1986: "https://api.oyez.org/sites/default/files/images/courts/rehnquist1.jpg",
+    1988: "https://api.oyez.org/sites/default/files/images/courts/rehnquist3.jpg",
+    1990: "https://api.oyez.org/sites/default/files/images/courts/rehnquist5.jpg",
+    1991: "https://api.oyez.org/sites/default/files/images/courts/rehnquist7.jpg",
+    1993: "https://api.oyez.org/sites/default/files/images/courts/rehnquist9.jpg",
+    1994: "https://api.oyez.org/sites/default/files/images/courts/rehnquist10.jpg",
+    2005: "https://api.oyez.org/sites/default/files/images/courts/roberts1.jpg",
+    2006: "https://api.oyez.org/sites/default/files/images/courts/roberts2.jpg",
+    2009: "https://api.oyez.org/sites/default/files/images/courts/roberts4.jpg",
+    2010: "https://api.oyez.org/sites/default/files/images/courts/roberts6.jpg",
+    2017: "https://api.oyez.org/sites/default/files/filefield_paths/GroupPhoto.jpg"
 }
 
 var getClosest = function (arr, num) {
@@ -63,13 +87,12 @@ let breakpointsPopulation = Object.keys(yearFemalePop);
             .range([0, window.innerWidth])
             console.log(justiceLineScale(9))
 
-//  d3.select("#enterSite").on("click", () => {
-//     d3.select("#landingPage").style("visibility", "hidden")
-//     })
+ d3.select("#enterSite").on("click", () => {
+    d3.select("#landingPage").style("visibility", "hidden")
+    })
 
 // this function should look through the current position and find the ID of the case whose Yposition is closest but less than the current scroll position
 const findCurrentCase = (scrollPosition) => {
-    
 }
 
 fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
@@ -131,7 +154,7 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
         // console.log(currentYear)
         closestBreakpointPop = getClosest( breakpointsPopulation, this.pageYOffset)
         womenPop = yearFemalePop[closestBreakpointPop]
-        console.log('womenPop', womenPop)
+        console.log('numJustices', numJustices, justiceLineScale(numJustices))
         //numJustices = currentYear.femaleJustice
         // console.log(womenPop)
             d3.select("#justiceLine")
@@ -139,12 +162,14 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
             .transition()
             .duration(1000)
             .style("left", `${justiceLineScale(numJustices)}px`)
+            d3.select("#justiceLine p")
             .text( (!numJustices ? 0 : numJustices)  + " Women on Supreme Court")
             d3.select("#femalePopulation")
                 // .enter() // DATA JOINS 
                 // .append('text')
-                .html("Women in the United States: " + (!womenPop ? 0 : womenPop))
-        console.log(caseList)
+                .html("Women in the United States: " + (!womenPop ? 0 : d3.format(",d")(womenPop)))
+        // console.log(caseList)
+        
     })
     
     // d3.select(justiceLine)
@@ -169,6 +194,7 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
         .classed("case", false);
         // d3.select("#singleCase").style("visibility", "hidden")
     }) // DATA JOIN 
+    
         
     // creating groups for each case and putting into timeline div 
     let cases = timeline.selectAll('div.case')
@@ -176,6 +202,26 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
            .enter()
            .append('div')
            .attr('class', 'case')
+           .style("padding-bottom", (d) => {
+               if (d.name == 'Gonzales v. Carhart' || d.name == 'Webster v. Reproductive Health Services' || d.name == 'Planned Parenthood of Central Missouri v. Danforth' || d.name == 'Carey v. Population Services International' || d.name == 'Planned Parenthood Association of Kansas City, Missouri, Inc. v. Ashcroft' || d.name == 'Akron v. Akron Center For Reproductive Health' || d.name == 'Thornburgh v. American College of Obstetricians and Gynecologists' || d.name == 'Ohio v. Akron Center for Reproductive Health' || d.name == 'Planned Parenthood of Southeastern Pennsylvania v. Casey' || d.name == 'National Organization for Women, Inc. v. Scheidler' || d.name == "Madsen v. Women's Health Center, Inc." || d.name == "Schenck v. Pro-Choice Network of Western New York" || d.name == "Scheidler v. National Organization for Women, Inc." || d.name == "Ayotte v. Planned Parenthood of Northern New England" || d.name == "Gonzales v. Planned Parenthood Federation of America, Inc." || d.name == "Whole Woman’s Health v. Hellerstedt" || d.name == "National Institute of Family and Life Advocates v. Becerra") {
+                   return "92px"
+               } else {
+                   return "0px"
+               }
+           })
+               
+        
+        // (number == 1 || number2 == 1)
+
+
+        //   .attr('height', () => {
+        //             if (item.Female.Expect[m].year == '2016') {
+        //                 return 40
+        //             } else {
+        //                 return 10
+        //             }
+        //         })
+        //   .attr('height', 100)
     
     // making the titles for each case and showing the date and name 
     let titles = cases
@@ -186,9 +232,8 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
                 showCase(d) 
             })
             .each(function (d, i) {
-              if (i==0 || i==1 || i==2) {
-                  console.log(this.getBoundingClientRect())
-              }
+             
+              
               const newPosition = (i ==0) ? this.getBoundingClientRect().top : (this.getBoundingClientRect().top + 150)
               
                positionMap[newPosition] = d.ID //finding the posiiton by the ID of the case 
@@ -197,8 +242,9 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
                     buildWordCloud(d.ID, this)
                
            })
+           
            .on("mouseover", function (d) {
-                    console.log("case is", d3.select(this))
+                    // console.log("case is", d3.select(this))
                     d3.select (this)
                     .select ("svg g")
                     // .attr("visibility", "visible")
@@ -212,6 +258,7 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
                     // .attr("visibility", "hidden")
                     .attr("opacity", 0)
                 })
+           
            console.log('positon map:', positionMap)
           
         //breakpoints = Object.keys(positionMap).map(k => +k)
@@ -265,10 +312,15 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
             d3.select('#facts')
             .html(response)
             .selectAll("a")
-            .on("click", () => {
+            .on("mouseover", () => {
                 let field = window.event.target.href.split("#")[1]; //finding at the #'s and then looking for the field directly after
                 showMap(field);
             })
+     .on("mouseout", () => {
+        d3.select("#mapContainer").style("opacity", 0)
+        d3.select("#fieldDescription").style("opacity", 0)
+      })
+
         });
     }
 
@@ -288,10 +340,8 @@ const showMap = (field) => {
             
 // console.log(geojson);
 d3.select("#mapContainer svg").remove();
-d3.select("#map")
-            .style("visibility", "visible")
 let svg = d3.select("#mapContainer")
-            .style("visibility", "visible")
+            .style("opacity", ".95")
             .append("svg")
 
 // let boxSize = d3.select("#map").node().getBoundingClientRect();
@@ -312,6 +362,7 @@ let svg = d3.select("#mapContainer")
     
     d3.select("#fieldDescription")
         .html(currentFieldDescription.description)
+        .style("opacity", 1)
     
     
     scale =  (scaleFactor) => {
@@ -323,13 +374,22 @@ let svg = d3.select("#mapContainer")
             }
         });
     }
-
+    
+    let albersProj = d3.geoAlbers()
+        .scale(1000)
+        //.rotate([71.057, 0])
+        .center([0, 42.313])
+        .translate([window.innerWidth/2, window.innerHeight/2 - 100]);
+        
+    let path = d3.geoPath().projection(albersProj);
+        
  	let featureElement = svg.selectAll("path")
 		.data(geojson.features)
 		.enter()
         .append("path")
-        .attr("d", d3.geoPath().projection(scale(10)))
-        .attr("stroke", "grey")
+        .attr("d", path)
+        .attr("stroke", "black")
+        .attr("stroke-opacity", 0.6)
         .attr("stroke-width", .3)
         .attr("fill", (d) => {
             if (stateData[d.properties.NAME]) {
@@ -337,12 +397,12 @@ let svg = d3.select("#mapContainer")
                 if (stateData[d.properties.NAME][field]) {
                     
                     if(stateData[d.properties.NAME][field] == 99) {
-                        return "pink"
+                        return "#FA4B49" // coded as 99 
                     } else {
-                        return "red"
+                        return "red" // not banned 
                     }
                 } else {
-                    return "#F8F0EA"
+                    return "#F8F0EA" // banned
                 }
             
             }
@@ -351,7 +411,48 @@ let svg = d3.select("#mapContainer")
             // console.log(d.properties.NAME);
             // return "white"
         }) 
-        .attr("fill-opacity", 0.6)
+        .attr("fill-opacity", 0.8);
+        
+        
+    let statesAbbr = svg.selectAll(".state")
+		.data(geojson.features)
+		.enter()
+		.append('text')
+		.attr('class', 'state')
+		.attr("fill", (d) => {
+            if (stateData[d.properties.NAME]) {
+                // console.log("state name", (stateData[d.properties.NAME][field]))
+                if (stateData[d.properties.NAME][field]) {
+                    
+                    if(stateData[d.properties.NAME][field] == 99) {
+                        return "#F8F0EA" // coded as 99 
+                    } else {
+                        return "#F8F0EA" // not banned 
+                    }
+                } else {
+                    return "red" // banned 
+                }
+            
+            }
+            
+            
+            // console.log(d.properties.NAME);
+            // return "white"
+        })
+        .text( (d) => {
+            // console.log(d.properties)
+            return d.properties.ABBR
+        })
+        .attr("x", (d) => {
+            return path.centroid(d)[0];
+        })
+        .attr("y", (d) => {
+            return path.centroid(d)[1];
+        });
+        
+        
+        
+        /*
         .on('mouseover', function(d) {
             console.log(d);
             // d3.select(this).attr("fill", "red");
@@ -369,6 +470,7 @@ let svg = d3.select("#mapContainer")
                 .attr('x', function() { return d3.mouse(this)[0] + 20; })
                 .attr('y', function() { return d3.mouse(this)[1] + 10; });
         });
+        */
             
     svg.append("text")
         .attr('id', 'hover');
@@ -376,10 +478,11 @@ let svg = d3.select("#mapContainer")
 });
 }
 
-d3.select("#closeMap").on("click", () => {
-    d3.select("#map").style("visibility", "hidden")
-    d3.select("#mapContainer").style("visibility", "hidden")
-})
+// d3.select("#closeMap").on("click", () => {
+//     d3.select("#map").style("visibility", "hidden")
+//     d3.select("#mapContainer").style("visibility", "hidden")
+// })
+
 
 // __________________UNDERLINE LINKS___________________// 
 
@@ -392,3 +495,27 @@ d3.select("#closeMap").on("click", () => {
 
 
 // append span and use d3.html function 
+
+
+//IMAGES 
+// .append("span")
+//             .append("img")
+//             .attr("height", 600)
+//             .attr("src", d=>{
+//                 // console.log("this is datum", d)
+//                 const imageSrc = justiceImageYear[d.term]
+//                     return imageSrc
+//                 // return "https://api.oyez.org/sites/default/files/images/courts/burger4.jpg"
+//                 })
+
+
+//  d3.select("#gradient").on("mouseover")
+//     .append("span")
+//     .append("img")
+//     .attr("height", 600)
+//     .attr("src", d=>{
+//         // console.log("this is datum", d)
+//     const imageSrc = justiceImageYear[d.term]
+//         return imageSrc
+//         // return "https://api.oyez.org/sites/default/files/images/courts/burger4.jpg"
+//      })

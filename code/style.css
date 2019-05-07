@@ -1,19 +1,66 @@
+@font-face {
+  font-family: 'NoeDisplay';
+  src: url('fonts/noe-display-regular.ttf')  format('truetype');
+}
+
 body {
     margin:0;
     position: relative;
+    background-color: #F8F0EA;
 }
 
 #landingPage {
-    background-color: red;
+    background-color: #F8F0EA;
     width:100%;
     height:800px;
-    /*z-index: 1;*/
+    z-index: 7;
+    position: fixed;
+    text-align: center;
+  /*  display: flex;*/
+  /*flex-direction: column;*/
+  /*justify-content: center;*/
+}
+
+#welcomeText {
+    /*font-family: 'NoeDisplay','Libre Baskerville', serif;*/
+    /*font-size: 40px;*/
+    /*padding-top: 300px;*/
+    /*left:100px;*/
+    /*text-align: left;*/
+    /*margin-left:50px;*/
+    /*position: fixed;*/
+    /*top: 45vh;*/
+    
+    font-family: 'NoeDisplay','Libre Baskerville', serif;
+    font-size: 40px;
+    /* padding-top: 300px; */
+    /* left: 100px; */
+    text-align: left;
+    margin-left: 50px;
+    position: fixed;
+    top: 35vh;
 }
 
 #enterSite {
-    font-size: 70px;
+    /*font-family: 'NoeDisplay', 'Libre Baskerville', serif;*/
+    /*font-size: 18px;*/
+    /*text-decoration: underline;*/
+    /*border: none;*/
+    /*background-color: #F8F0EA;*/
+    /*padding-bottom: 100px;*/
+    /*margin: auto;*/
+    /*padding-top: 100px;*/
+    
+    font-family: 'NoeDisplay', 'Libre Baskerville', serif;
+    font-size: 18px;
+    text-decoration: underline;
     border: none;
     background-color: #F8F0EA;
+    /* padding-bottom: 100px; */
+    margin: auto;
+    /* padding-top: 100px; */
+    top: 90vh;
+    position: relative;
 }
 
 #timeline {
@@ -22,7 +69,6 @@ body {
     /*visibility: hidden;*/
     justify-content: center;
     padding-top: 150px;
-    /*visibility:hidden;*/
     /*border-color: red;*/
     /*border-width: 1px;*/
     /*border-style: solid;*/
@@ -39,27 +85,34 @@ body {
 #timeline a {
     color: black;
     font-size:50px;
-    margin-left: 90px;
+    margin-left: 110px;
     margin-top: 0px;
     display: block;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'NoeDisplay', 'Libre Baskerville', serif;
+    height: 200px;
+    /*padding-top:100px;*/
+    /*padding-bottom: 100px;*/
     /*border-color: blue;*/
     /*border-width: 1px;*/
     /*border-style: solid;*/
 }
 
 #gradient {
-    /*background: #F8F0EA;*/
+    background: #F8F0EA;
     width:100%;
-    height: 20px;
+    height: 40px;
     position:fixed;
     top:0px;
-    z-index:auto;
-    background: linear-gradient(
-      to bottom,
-      #F8F0EA, 
-      transparent
-    );
+    z-index:1;
+    /*background: linear-gradient(*/
+    /*  to bottom,*/
+    /*  #F8F0EA, */
+    /*  transparent*/
+    /*);*/
+    border-bottom-color: black;
+    border-top-color: #F8F0EA;
+    border-width: 1px;
+    border-style: solid;
 }
 
 #singleCase {
@@ -70,6 +123,7 @@ body {
     top:0;
     display: none;
     overflow: scroll;
+    z-index: 4;
     /*border-color: green;*/
     /*border-width: 1px;*/
     /*border-style: solid;*/
@@ -79,7 +133,7 @@ body {
     display: block;
 }
 
-#map {
+#mapContainer {
     background-color: #F8F0EA;
     height: 100%;
     /*border-color: orange;*/
@@ -91,12 +145,14 @@ body {
     width:100%;
     bottom: 0;
     right:0px;
-    visibility: hidden;
+    /*visibility: hidden;*/
     z-index: auto;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
-#map svg {
-          position: absolute;
+#mapContainer svg {
+          /*position: absolute;*/
           width: 100%;
           height: 100%;
           /*width: 800px;*/
@@ -107,12 +163,13 @@ body {
           /*border-color: purple;*/
           /*border-width: 1px;*/
           /*border-style: solid;*/
+          
  
 }
 
-#map text {
+#mapContainer text {
         transition: fill-opacity 0.5s;
-        font-size: 12pt;
+        /*font-size: 12pt;*/
         /*border-color: pink;*/
         /*border-width: 1px;*/
         /*border-style: solid;*/
@@ -123,14 +180,20 @@ body {
     /*border-width: 1px;*/
     /*border-style: solid;*/
     /*height: 200px;*/
-    width: 100%;
-    font-size: 16px;
-    font-family: "Courier New", Courier, monospace;
+    width: 200px;
+    font-size: 10px;
+    font-family: 'Roboto Mono', "Courier New", Courier, monospace;
+    color: red;
     /*font-weight: bold;*/
-    text-align: center;
-    margin:auto;
-    line-height: 2;
-    z-index: 1;
+    text-align: left;
+    /*margin:auto;*/
+    /*line-height: 2;*/
+    z-index: 999;
+    position: fixed;
+    right: 30px;
+    top: 30%;
+    opacity: 0;
+    transition: opacity 0.5s;
     /*position:absolute;*/
     /*top:0px;*/
     /*box-sizing: border-box;*/
@@ -140,15 +203,17 @@ body {
 }
 
 #facts {
-    font-size:16px; 
-    font-family: "Courier New", Courier, monospace;
-    width: 60%;
+    font-size:14px; 
+    font-family: 'Roboto Mono', "Courier New", Courier, monospace;
+    width: 55%;
     margin: 0 auto;
     line-height: 3;
     text-align: center;
     /*border-color: pink;*/
     /*border-width: 1px;*/
     /*border-style: solid;*/
+    //z-index: 999;
+    //position: relative;
 }
 
 #caseName .name {
@@ -158,12 +223,14 @@ body {
     width: 75%;
     margin: 0 auto;
     font-size:85px; 
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'NoeDisplay', 'Libre Baskerville', serif;
     text-align: center;
     text-transform: uppercase;
     /*border-color: red;*/
     /*border-width: 1px;*/
     /*border-style: solid;*/
+    z-index: 999;
+    position: relative;
     
 }
 
@@ -171,7 +238,7 @@ body {
     display: block;
     text-align: center;
     font-size: 12px;
-    font-family: "Courier New", Courier, monospace;
+    font-family: 'Roboto Mono', "Courier New", Courier, monospace;
     padding-top:65px;
 }
 
@@ -182,29 +249,39 @@ body {
     /*border:solid 3px hsla(0, 80%, 50%, 5);*/
 }
 
+/*.underline a p {display:none;}*/
+/*.underline a:hover p {display:block;}*/
+/*.underline a:hover {display:block;}*/
+
 #justiceLine {
     height:100vh;
-    border-left: 5px solid #B70101;
+    border-left: 7px solid #B70101;
     position: fixed;
     left:0px;
-    top:0px;
-    font-size:12px;
+    /*top:13px;*/
+    font-size:13px;
     /*font-family: 'Libre Baskerville', serif;*/
-    font-family: "Courier New", Courier, monospace;
+    font-family: 'Roboto Mono', "Courier New", Courier, monospace;
     text-transform: uppercase;
-    /*z-index:1;*/
-    
+    z-index:3;
+    /*font-weight: bold;*/
 }
 
+/*#justiceLine p {*/
+/*    padding-top:12px;*/
+/*}*/
+
 #femalePopulation {
-    font-size:12px;
+    font-size:13px;
     /*font-family: 'Libre Baskerville', serif;*/
-    font-family: "Courier New", Courier, monospace;
+    font-family: 'Roboto Mono', "Courier New", Courier, monospace;
+    /*font-weight: bold;*/
     text-transform: uppercase;
-    right:0;
-    top:0px;
+    right:8px;
+    top:12px;
     position: fixed;
     margin:0;
+    z-index: 3;
 }
 
 #closeMap {
@@ -233,8 +310,8 @@ a:visited {
 .keywords {
     fill: grey;
     text-shadow: 4px 4px 5px #F8F0EA;
-    font-family: 'Libre Baskerville', serif;
-    /*border: solid 2px red;*/
+    font-family: 'NoeDisplay','Libre Baskerville', serif;
+    border: solid 2px red;
     /*text-shadow: red;*/
     
 }
@@ -247,6 +324,70 @@ a:link {
   color: black;
 }
 
+#case {
+    height: 300px;
+}
 
+/*.description {*/
+/*    right:0px;*/
+/*}*/
 
+#hoverMap {
+    background: red;
+    height: 400px;
+    width: 400px;
+    top:0px;
+    display: none;
+}
+
+#images {
+    position: absolute;
+    /*opacity: 0.6;*/
+}
+
+#justiceImage {
+    height:200px;
+    width: 200px;
+}
+
+.case a:hover span {
+    display: block;
+    /*transition: opacity 1s ease-in-out;*/
+    left:200px;
+}
+
+.case a {
+    position: relative;
+}
+
+.case a span {
+    display: none;
+    z-index: 3;
+    /*margin-left: auto;*/
+    position: fixed;
+    top: 50px;
+    /*transition: all .75s ease-in-out;*/
+    /*transition: opacity 1s ease-in-out;*/
+}
+
+.case a span img {
+    opacity: 0.6;
+    transition: all .75s ease-in-out;
+    /*transition: opacity 1s ease-in-out;*/
+}
+
+.title a:hover {
+       transition: all 1s ease-in-out;
+}
+
+.state {
+    font-size:8px;
+    font-family: 'Roboto Mono', "Courier New", Courier, monospace;
+}
+
+.underlineText {
+    text-decoration: none;
+    border-bottom: 5px solid red;
+    /*font-weight: bold;*/
+}
 

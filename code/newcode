@@ -1,0 +1,64 @@
+// making the titles for each case and showing the date and name 
+    let titles = cases
+            .append('p')
+            .attr('class', 'title')
+            .on("click", (d) => {
+                showCase(d) 
+            })
+            
+            .each(function (d, i) {
+              if (i==0 || i==1 || i==2) {
+                  console.log(this.getBoundingClientRect())
+              }
+              const newPosition = (i ==0) ? this.getBoundingClientRect().top : (this.getBoundingClientRect().top + 150)
+              
+               positionMap[newPosition] = d.ID //finding the posiiton by the ID of the case 
+            //   console.log(d.ID)
+            //   if (d.ID === 50657) {
+                    buildWordCloud(d.ID, this)
+               
+           })
+           
+    titles.append("p").text((d) => { return d.term })
+            .on("mouseover", function (d) {
+                    console.log("year image is", d3.select(this))
+                    d3.select (this)
+                    .select ("svg g")
+                    // .attr("visibility", "visible")
+                    .attr("opacity", 1)
+                })
+            
+            .on("mouseout", function (d) {
+                    console.log("case is", d3.select(this))
+                    d3.select (this)
+                    .select ("svg g")
+                    // .attr("visibility", "hidden")
+                    .attr("opacity", 0)
+                })
+                
+    titles.append("p").text((d) => { return " - " + d.name })
+            // .text((d) => { return d.term + " - " + d.name; })
+            
+           .on("mouseover", function (d) {
+                    console.log("case is", d3.select(this))
+                    d3.select (this)
+                    .select ("svg g")
+                    // .attr("visibility", "visible")
+                    .attr("opacity", 1)
+                })
+            
+            .on("mouseout", function (d) {
+                    console.log("case is", d3.select(this))
+                    d3.select (this)
+                    .select ("svg g")
+                    // .attr("visibility", "hidden")
+                    .attr("opacity", 0)
+                })
+           console.log('positon map:', positionMap)
+          
+        //breakpoints = Object.keys(positionMap).map(k => +k)
+        
+    // titles.append('span')
+    //     .text('something')
+    
+})
