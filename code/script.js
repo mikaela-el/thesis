@@ -396,15 +396,24 @@ let svg = d3.select("#mapContainer")
                 // console.log("state name", (stateData[d.properties.NAME][field]))
                 if (stateData[d.properties.NAME][field]) {
                     
-                    if(stateData[d.properties.NAME][field] == 99) {
+                    if(stateData[d.properties.NAME][field] == 22) {
+                        return "red" // coded as 99 
+                    } 
+                    if(stateData[d.properties.NAME][field] == 27) {
                         return "#FA4B49" // coded as 99 
-                    } else {
-                        return "red" // not banned 
+                    } 
+                    if(stateData[d.properties.NAME][field] == 99) {
+                        return "#FD9898" // coded as 99 
+                    } 
+                    if(stateData[d.properties.NAME][field] == 28) {
+                        return "##FDCCCB" // coded as 99 
+                    }
+                    else {
+                        return "#DC0000" // not banned 
                     }
                 } else {
                     return "#F8F0EA" // banned
                 }
-            
             }
             
             

@@ -42,7 +42,7 @@
   {
     "field": "exception_life",
     "title": "Exception to Save a Pregnant Person's Life",
-    "description": "States that abortion is not banned if necessary to save the pregnant person's life."
+    "description": "States that abortion is not banned if necessary to save the pregnant person's life. <br><br> *no data"
   },
   {
     "field": "exception_health",
@@ -62,27 +62,27 @@
   {
     "field": "medicaid_coverage_provider_patient_decision",
     "title": "Medicaid Coverage",
-    "description": "States that have a policy in place to use Medicaid funds to pay for abortion, most of these states require coverage for \"medically necessary\" abortion. This is a vaguely-defined criterion usually based on a decision between a pregnant person and their medical provider and can include circumstances beyond physical health, such as mental or emotional health or familial situations.\nMedicaid is a federal-state insurance program. Based on the Hyde amendment, states are required to use Medicaid funds to pay for abortion in cases of rape, of incest, or when the pregnant person's life is endangered; these are also the only circumstances in which federal Medicaid funds may be used to pay for abortion. Most states limit abortion coverage just to the Hyde amendment, though some states offer additional coverage (for example, when the pregnant person's health is at risk)."
+    "description": "States that have a policy in place to use Medicaid funds to pay for abortion, most of these states require coverage for \"medically necessary\" abortion. This is a vaguely-defined criterion usually based on a decision between a pregnant person and their medical provider and can include circumstances beyond physical health, such as mental or emotional health or familial situations."
   },
   {
     "field": "medicaid_exception_life",
     "title": "Medicaid Coverage Exception to Save a Life",
-    "description": "States that allow Medicaid insurance coverage for cases where abortion is necessary to save the pregnant person's life (this is required by the Hyde amendment).\nMedicaid is a federal-state insurance program. Based on the Hyde amendment, states are required to use Medicaid funds to pay for abortion in cases of rape, of incest, or when the pregnant person's life is endangered; these are also the only circumstances in which federal Medicaid funds may be used to pay for abortion. Most states limit abortion coverage just to the Hyde amendment, though some states offer additional coverage (for example, when the pregnant person's health is at risk)."
+    "description": "States that allow Medicaid insurance coverage for cases where abortion is necessary to save the pregnant person's life (this is required by the Hyde amendment)."
   },
   {
     "field": "medicaid_exception_health",
     "title": "Medicaid Coverage Exception to Save a Person's Health",
-    "description": "States that allow Medicaid insurance coverage for cases when the pregnant person's physical health is endangered. Medicaid is a federal-state insurance program. Based on the Hyde amendment, states are required to use Medicaid funds to pay for abortion in cases of rape, of incest, or when the pregnant person's life is endangered; these are also the only circumstances in which federal Medicaid funds may be used to pay for abortion. Most states limit abortion coverage just to the Hyde amendment, though some states offer additional coverage (for example, when the pregnant person's health is at risk)."
+    "description": "States that allow Medicaid insurance coverage for cases when the pregnant person's physical health is endangered. Medicaid is a federal-state insurance program."
   },
   {
     "field": "medicaid_exception_fetal",
     "title": "Medicaid Exception to Preserve the Health of a Fetus",
-    "description": "States that allow Medicaid insurance coverage for cases when the fetus has a serious or lethal fetal anomaly. Medicaid is a federal-state insurance program. Based on the Hyde amendment, states are required to use Medicaid funds to pay for abortion in cases of rape, of incest, or when the pregnant person's life is endangered; these are also the only circumstances in which federal Medicaid funds may be used to pay for abortion. Most states limit abortion coverage just to the Hyde amendment, though some states offer additional coverage (for example, when the pregnant person's health is at risk)."
+    "description": "States that allow Medicaid insurance coverage for cases when the fetus has a serious or lethal fetal anomaly. Medicaid is a federal-state insurance program."
   },
   {
     "field": "medicaid_exception_rape_or_incest",
     "title": "Medicaid Exception in the case of Rape or Incest",
-    "description": "States that allow Medicaid insurance coverage for cases of rape or incest (this is required by the Hyde amendment). Medicaid is a federal-state insurance program. Based on the Hyde amendment, states are required to use Medicaid funds to pay for abortion in cases of rape, of incest, or when the pregnant person's life is endangered; these are also the only circumstances in which federal Medicaid funds may be used to pay for abortion. Most states limit abortion coverage just to the Hyde amendment, though some states offer additional coverage (for example, when the pregnant person's health is at risk)."
+    "description": "States that allow Medicaid insurance coverage for cases of rape or incest (this is required by the Hyde amendment)."
   },
   {
     "field": "below_age",
@@ -97,7 +97,7 @@
   {
     "field": "parental_notification_required",
     "title": "Parental Notification",
-    "description": "In the U.S., 15 states require that a parent or parents must be told beforehand of the minor's decision to have an abortion. Some states require notification 48 hours before, some require notification 24 hours before, and some just require \"before\"."
+    "description": "States that require either a parent or parents must be told beforehand of the minor's decision to have an abortion. Some states require notification 48 hours before, some require notification 24 hours before, and some just require \"before\"."
   },
   {
     "field": "parents_required",
