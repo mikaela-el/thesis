@@ -2,8 +2,6 @@
 
 #### Description 
 
-##### (inset descriotion here)
-
 #### Image
 
 ![image](previewImage.png)
