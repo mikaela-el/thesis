@@ -80,7 +80,7 @@
                 .append("svg")
                 .attr("class", "keywordSVG")
                 .attr("transform", "translate(" + -100 + "," + -150 + ")")
-                .attr("width", cfg.w+cfg.ExtraWidthX + 400)
+                .attr("width", cfg.w+cfg.ExtraWidthX + 500)
                 .attr("height", cfg.h+cfg.ExtraWidthY)
                 .append("g")
                 .attr("class", "keywordGROUP")
