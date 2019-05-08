@@ -85,7 +85,7 @@ body {
 #timeline a {
     color: black;
     font-size:50px;
-    margin-left: 110px;
+    margin-left: 160px;
     margin-top: 0px;
     display: block;
     font-family: 'NoeDisplay', 'Libre Baskerville', serif;
@@ -208,7 +208,7 @@ body {
     width: 55%;
     margin: 0 auto;
     line-height: 3;
-    text-align: center;
+    text-align: left;
     /*border-color: pink;*/
     /*border-width: 1px;*/
     /*border-style: solid;*/
@@ -391,3 +391,6 @@ a:link {
     /*font-weight: bold;*/
 }
 
+.title {
+    margin-left:100px;
+}

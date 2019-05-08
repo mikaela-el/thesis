@@ -1,8 +1,8 @@
 // (function () {
     //   console.log("hi")
     
-    var width = 300,
-        height = 300;
+    var width = 175,
+        height = 400;
     
     // Config for the Radar chart
     var config = {
@@ -47,7 +47,7 @@
              opacityArea: 0.5,
              ToRight: 5,
              TranslateX: 30,
-             TranslateY: 60,
+             TranslateY: 25,
              ExtraWidthX: 0,
              ExtraWidthY: 0,
              color: d3.scaleOrdinal().range(["#6F257F", "#CA0D59"])
@@ -80,7 +80,7 @@
                 .append("svg")
                 .attr("class", "keywordSVG")
                 .attr("transform", "translate(" + -100 + "," + -150 + ")")
-                .attr("width", cfg.w+cfg.ExtraWidthX + 200)
+                .attr("width", cfg.w+cfg.ExtraWidthX + 400)
                 .attr("height", cfg.h+cfg.ExtraWidthY)
                 .append("g")
                 .attr("class", "keywordGROUP")
