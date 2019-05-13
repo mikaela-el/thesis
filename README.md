@@ -6,7 +6,7 @@
 
 [Project link](https://mikaela-el.github.io/thesis/code/index.html)
 
-[Video Link](https://drive.google.com/file/d/11o87Aa65dWN5MnCG_-hPVdb59VnyJSpf/view?usp=sharing)
+[Video Link Google Drive](https://drive.google.com/file/d/11o87Aa65dWN5MnCG_-hPVdb59VnyJSpf/view?usp=sharing)
 
-
+![Video](demo.mov)
 
