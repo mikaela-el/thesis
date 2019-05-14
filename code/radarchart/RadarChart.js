@@ -83,8 +83,15 @@
                 .attr("width", cfg.w+cfg.ExtraWidthX + 700)
                 .attr("height", cfg.h+cfg.ExtraWidthY)
                 .append("g")
+            //      .style("padding-bottom", (d) => {
+            //     if (d.name == 'Gonzales v. Carhart' || d.name == 'Webster v. Reproductive Health Services' || d.name == 'Planned Parenthood of Central Missouri v. Danforth' || d.name == 'Carey v. Population Services International' || d.name == 'Planned Parenthood Association of Kansas City, Missouri, Inc. v. Ashcroft' || d.name == 'Akron v. Akron Center For Reproductive Health' || d.name == 'Thornburgh v. American College of Obstetricians and Gynecologists' || d.name == 'Ohio v. Akron Center for Reproductive Health' || d.name == 'Planned Parenthood of Southeastern Pennsylvania v. Casey' || d.name == 'National Organization for Women, Inc. v. Scheidler' || d.name == "Madsen v. Women's Health Center, Inc." || d.name == "Schenck v. Pro-Choice Network of Western New York" || d.name == "Scheidler v. National Organization for Women, Inc." || d.name == "Ayotte v. Planned Parenthood of Northern New England" || d.name == "Gonzales v. Planned Parenthood Federation of America, Inc." || d.name == "Whole Woman’s Health v. Hellerstedt" || d.name == "National Institute of Family and Life Advocates v. Becerra") {
+            //         return "92px"
+            //     } else {
+            //         return "0px"
+            //     }
+            // })
                 .attr("class", "keywordGROUP")
-                .attr("transform", "translate(" + cfg.TranslateX + "," + cfg.TranslateY + ")")
+                .attr("transform", "translate(" + cfg.TranslateX + "," + (cfg.TranslateY-10) + ")")
                 // .attr("visibility", "hidden");
                 .attr("opacity", 0);
         
