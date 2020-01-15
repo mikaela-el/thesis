@@ -7,8 +7,8 @@ d3.json("yeardata.json")
 
 const yearJusticeCount = {
     0: 0,
-    3252: 1,
-    5248: 2,
+    3552: 1,
+    6200: 2,
     8834: 1,
     9443: 3
 }
@@ -46,6 +46,22 @@ const justiceImageYear = {
     0: "https://api.oyez.org/sites/default/files/images/courts/burger2.jpg",
     3252: 'https://api.oyez.org/sites/default/files/images/courts/rehnquist1.jpg',
     5248: 'https://api.oyez.org/sites/default/files/images/courts/roberts1.jpg',
+    0: "https://api.oyez.org/sites/default/files/images/courts/burger2.jpg", //1970
+    50: "https://api.oyez.org/sites/default/files/images/courts/burger2.jpg", //1971
+    600: "https://api.oyez.org/sites/default/files/images/courts/burger4.jpg", //1973
+    800: "https://api.oyez.org/sites/default/files/images/courts/burger6.jpg", //1975
+    3552: "https://api.oyez.org/sites/default/files/images/courts/burger8.jpg", //1982
+    4650: "https://api.oyez.org/sites/default/files/images/courts/rehnquist1.jpg", //1987
+    4850: "https://api.oyez.org/sites/default/files/images/courts/rehnquist3.jpg", //1988
+    5700: "https://api.oyez.org/sites/default/files/images/courts/rehnquist5.jpg", //1990
+    5850: "https://api.oyez.org/sites/default/files/images/courts/rehnquist7.jpg", // 1991
+    6200: "https://api.oyez.org/sites/default/files/images/courts/rehnquist9.jpg", //1993
+    6750: "https://api.oyez.org/sites/default/files/images/courts/rehnquist10.jpg", //1995
+    8350: "https://api.oyez.org/sites/default/files/images/courts/roberts1.jpg", //2005
+    8834: "https://api.oyez.org/sites/default/files/images/courts/roberts2.jpg", //2006
+    9500: "https://api.oyez.org/sites/default/files/images/courts/roberts6.jpg", //2010
+    10000: "https://api.oyez.org/sites/default/files/filefield_paths/GroupPhoto.jpg" // 2017
+>>>>>>> 7e78b713bdf1eb36dd02b248dc14b999437aac30
 }
 
 var getClosest = function (arr, num) {
@@ -76,9 +92,17 @@ const justiceLineScale = d3.scaleLinear()
     .range([0, window.innerWidth])
 console.log(justiceLineScale(9))
 
+<<<<<<< HEAD
+
 d3.select("#enterSite").on("click", () => {
     d3.select("#landingPage").style("visibility", "hidden")
 })
+
+=======
+d3.select("#enterSite").on("click", () => {
+    d3.select("#landingPage").style("visibility", "hidden")
+})
+>>>>>>> 7e78b713bdf1eb36dd02b248dc14b999437aac30
 
 // this function should look through the current position and find the ID of the case whose Yposition is closest but less than the current scroll position
 const findCurrentCase = (scrollPosition) => {}
@@ -96,16 +120,38 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
             let decidedDate = singleCase.timeline.find(item => {
                 return item.event == "Decided";
             });
-
+<<<<<<< HEAD
             return {
                 name: singleCase.name,
                 ID: singleCase.ID,
                 // date: decidedDate.dates[0],
                 date: decidedDate,
+=======
+
+            return {
+                name: singleCase.name,
+                ID: singleCase.ID,
+                date: decidedDate.dates[0],
+>>>>>>> 7e78b713bdf1eb36dd02b248dc14b999437aac30
                 term: singleCase.term,
                 caseURL: 'https://api.oyez.org/cases/' + singleCase.term + '/' + singleCase.docket_number
             };
         });
+<<<<<<< HEAD
+        function sortByKey(array, key) {
+            return array.sort(function (a, b) {
+                var fElem = a[key];
+                var sElem = b[key];
+                return ((fElem < sElem) ? -1 : ((fElem > sElem) ? 1 : 0));
+            });
+        }
+
+        sortByKey(cases, "term");
+
+        return cases;
+    })
+
+=======
 
         function sortByKey(array, key) {
             return array.sort(function (a, b) {
@@ -120,6 +166,7 @@ fetch("https://api.oyez.org/cases?filter=issue:423&page=0&per_page=0")
         return cases;
     })
 
+>>>>>>> 7e78b713bdf1eb36dd02b248dc14b999437aac30
     // this is for the justice line and scrolling 
     .then(caseList => {
         let numJustices = 0;
@@ -342,8 +389,13 @@ const showMap = (field) => {
 
         // let boxSize = d3.select("#map").node().getBoundingClientRect();
         // console.log(boxSize)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 7e78b713bdf1eb36dd02b248dc14b999437aac30
         console.log(field, fieldDescription);
 
         let currentFieldDescription = fieldDescription.filter(item => {
@@ -515,7 +567,11 @@ const showMap = (field) => {
 
 d3.select('#images')
     .style('opacity', 0)
+<<<<<<< HEAD
 d3.select("#gradient")
+=======
+d3.select("#justiceLine")
+>>>>>>> 7e78b713bdf1eb36dd02b248dc14b999437aac30
     .on("mouseover", function () {
         d3.select('#justiceImage')
             .attr("src", d => {
