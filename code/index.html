@@ -1,75 +1,80 @@
 <!DOCTYPE html>
 <html>
-    <head>
-         <title>
-             Visualizing Women's Reproductive Rights 
-         </title> 
-         <script src="https://d3js.org/d3.v5.min.js"></script>
-         <script src="https://d3js.org/d3-array.v2.min.js"></script>
-         <link rel="stylesheet" type="text/css" href="style.css">
-         <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+
+<head>
+    <title>
+        Visualizing Women's Reproductive Rights
+    </title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
 
 
-         <!--for google fonts-->
-         <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
-         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-        
-         <!--for map-->
-        <meta charset="utf-8">
-        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
-    </head>
-    
-    <body>
-        <div id="landingPage">
-            <p id="welcomeText">
-                From the <span class="underlineText">Supreme Court</span> to the <span class="underlineText">States</span>: <br> Visualizing Women's Reproductive Rights 
-            </p>
-            <button id="enterSite">
-                Enter 
-            </button>
-        </div>
-        <div id="chart"></div>
-             <div id="justiceLine">
-                 <p></p>
-        </div>
-        
-        <div id="timeline">
-            <div id="gradient">
-            </div>
+    <!--for google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    <!--for map-->
+    <meta charset="utf-8">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+</head>
+
+<body>
+    <div id="landingPage">
+        <p id="welcomeText">
+            From the <span class="underlineText">Supreme Court</span> to the <span class="underlineText">States</span>:
+            <br> Visualizing Women's Reproductive Rights
+        </p>
+        <button id="enterSite">
+            Enter
+        </button>
+    </div>
+    <div id="chart"></div>
+    <div id="justiceLine">
+        <p></p>
+    </div>
+
+    <div id="timeline">
+        <div id="gradient">
+
             <p id="femalePopulation">
             </p>
-            <div id="images">
-                 <!--<img id="justiceImage" src="https://api.oyez.org/sites/default/files/images/courts/rehnquist10.jpg"/>-->
-            </div>
-                
-            </div>
-        
-        <div id="singleCase">
-            <div id="container">
-                     <div id="mapContainer">
-                    </div>
-                    <div id="caseName">
-                    </div>
-                    <div id ="fieldDescription">
-                    </div>
-                    <div id="facts">
-                    </div>
-            </div>
-            <button id="closeSingleCase">
-                     &times; 
-            </button>
-            
-            <!--<div id="map">-->
-            <!--    <button id="closeMap">-->
-            <!--        &times; -->
-            <!--    </button>-->
-                <!--<div id ="fieldDescription">-->
-                <!--</div>-->
-            <!--    <div id="mapContainer">-->
-            <!--    </div>-->
-            <!--</div>-->
+
         </div>
-     <script type="text/javascript" src="radarchart/RadarChart.js"></script>
-     <script defer type="text/javascript" src="script.js"></script>   
-    </body>
+        <div id="images">
+            <img id="justiceImage" src="https://api.oyez.org/sites/default/files/images/courts/rehnquist10.jpg" />
+        </div>
+
+    </div>
+
+    <div id="singleCase">
+        <div id="container">
+            <div id="mapContainer">
+            </div>
+            <div id="caseName">
+            </div>
+            <div id="fieldDescription">
+            </div>
+            <div id="facts">
+            </div>
+        </div>
+        <button id="closeSingleCase">
+            &times;
+        </button>
+
+        <!--<div id="map">-->
+        <!--    <button id="closeMap">-->
+        <!--        &times; -->
+        <!--    </button>-->
+        <!--<div id ="fieldDescription">-->
+        <!--</div>-->
+        <!--    <div id="mapContainer">-->
+        <!--    </div>-->
+        <!--</div>-->
+    </div>
+    <script type="text/javascript" src="radarchart/RadarChart.js"></script>
+    <script defer type="text/javascript" src="script.js"></script>
+</body>
+
 </html>

@@ -341,13 +341,13 @@ a:link {
 }
 
 #images {
-    position: absolute;
-    /*opacity: 0.6;*/
+    position: fixed;
+    top: 100px;
 }
 
 #justiceImage {
-    height:200px;
-    width: 200px;
+    height: 300px;
+
 }
 
 .case a:hover span {
